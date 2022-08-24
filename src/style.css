@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: rgb(101, 78, 228);
+    color: rgb(245, 230, 230);
+}
+
+a {
+    color: rgb(245, 230, 230);
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1080px;
+    margin-inline: auto;
+    height: 100vh;
+}
+
+.container .orders {
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.812);
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.412);
+}
+
+.container .orders .orders__order{
+    width: 100%;
+    padding-block: 1rem;
+    font-size: 1.3rem;
+}
