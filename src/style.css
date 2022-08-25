@@ -1,9 +1,11 @@
+/* Basic Styling Reset */
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     background-color: rgb(101, 78, 228);
     color: rgb(245, 230, 230);
@@ -11,6 +13,11 @@ body {
 
 a {
     color: rgb(245, 230, 230);
+}
+
+/* Utility Class */
+.green {
+    color: green;
 }
 
 .container {
@@ -22,6 +29,7 @@ a {
     height: 100vh;
 }
 
+/* Orders */
 .container .orders {
     padding: 1.5rem 3rem;
     border-radius: 10px;
@@ -33,16 +41,18 @@ a {
     width: 100%;
     padding-block: 1rem;
     font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
+/* Modal */
 .container .modal {
     border: 1px solid rgba(28, 27, 27, 0.849);
     border-radius: 10px;
     padding: 1.5rem;
     position: absolute;
     width: 50%;
-    height: 50%;
-    background-color: rgba(41, 40, 40, 0.812);
+    background-color: rgba(41, 40, 40, 0.918);
     box-shadow:  0 0 10px rgba(0, 0, 0, 0.412);
     backdrop-filter: blur(15px);
     display: flex;
@@ -50,17 +60,61 @@ a {
     justify-content: center;
 }
 
-.container .modal .fa-x {
+.container .modal  .fa-x {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
     cursor: pointer;
 }
 
-.modal__title {
-    position: absolute;
-    top: 3rem;
-    left: 0;
+.container .modal__title {
     width: 100%;
     text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
 }
+
+.container h3 {
+    font-size: 1.2rem;
+}
+
+.container p {
+    font-size: 1.1rem;
+}
+
+.container .modal .modal__field {
+    margin-bottom: 1rem;
+}
+
+/* Modal Table */
+.container .modal .modal__table {
+    border: 1px solid rgb(174, 172, 172);
+}
+
+.container .modal .modal__table,
+.container .modal .modal__table td {
+    text-align: center;
+}
+
+.container .modal .modal__table td {
+    padding: .5rem;
+}
+
+.container .modal .modal__table .modal__table__title{
+    /* background-color: rgb(114, 118, 114); */
+    padding-block: 1rem;
+}
+
+.container .modal .modal__table .modal__table__header{
+    background-color: rgb(75, 83, 80);
+    padding: .7rem;
+}
+
+.container .modal .modal__table tr{
+    background-color: rgb(31, 36, 34);
+}
+
+.container .modal .modal__table tr:nth-child(even){
+    background-color: rgb(1, 1, 1);
+}
+

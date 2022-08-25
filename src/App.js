@@ -1,17 +1,23 @@
 import { useState } from 'react';
+// Import JSON file
 import jsonData from './purchaseOrders.json';
+// Import components
 import Order from './components/Order';
 import Modal from './Modal';
 
 function App() {
+
+  // Declare variables & states
   const [modal,setModal] = useState({
     isOpen: false,
     orderAddress: '',
     orderContactPerson: '',
-    orderStatus: ''
+    orderStatus: '',
+    orderDetails: [],
+    orderId: 0
   })
 
-
+  // Render orders
   const orders = jsonData.mvPurchaseOrders.map((order) => {
     return (
     <Order
@@ -41,17 +47,11 @@ function App() {
         ...previousModal,
         orderAddress: order[0].PurchaseOrderAddress,
         orderContactPerson: order[0].PurchaseOrderContactPerson,
-        orderStatus: order[0].PurchaseOrderStatus
+        orderStatus: order[0].PurchaseOrderStatus,
+        orderDetails: order[0].PurchaseOrderDetails,
+        orderId: order[0].PurchaseOrderId
       }
     ))
-
-    order[0].PurchaseOrderDetails.forEach(row => {
-      console.log('OrderDetails')
-      console.log('ProductSKU: ' + row.PurchaseOrderRowProductSKU)
-      console.log('RowQuantity: ' + row.PurchaseOrderRowQuantity)
-      console.log('UnitPriceWithoutTaxOrDiscount: ' + row.PurchaseOrderRowUnitPriceWithoutTaxOrDiscount)
-      console.log('RowTotalAmount: ' + row.PurchaseOrderRowTotalAmount)
-    })
   }
 
   // Function that closes modal
